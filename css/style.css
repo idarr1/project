@@ -1,0 +1,706 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, .logo {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+body {
+    font-family: "Montserrat", "Roboto", "Open Sans", Arial, sans-serif;
+    background: #e8f1fb;
+    color: #1e293b;
+    line-height: 1.6;
+    cursor: default;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.siteHeader {
+    background: #0f172a;
+    padding: 20px 0;
+    border-bottom: 2px solid #38bdf8;
+}
+
+.siteHeader .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #38bdf8;
+text-decoration: none;
+display: inline-block;
+}
+
+.mainNav {
+    display: flex;
+    gap: 25px;
+}
+
+.mainNav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.mainNav a:hover {
+    color: #38bdf8;
+}
+
+.mainNav a.active {
+    color: #38bdf8;
+}
+
+.mainNav a.active::after {
+    width: 100%;
+}
+
+.heroSection {
+    padding: 110px 0;
+    text-align: center;
+    background: linear-gradient(135deg, #0f172a, #1e3a5f, #dbeafe);
+    color: white;
+}
+
+.heroSection h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.heroSection p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #dbeafe;
+}
+
+.mainButton {
+    padding: 15px 35px;
+    border: none;
+    background: #38bdf8;
+    color: #0f172a;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+text-decoration: none;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+}
+
+.mainButton:hover {
+    background: #0ea5e9;
+    color: white;
+}
+
+.catalogSection {
+    padding: 80px 0;
+    background: #edf4fc;
+}
+
+.catalogSection h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: #0f172a;
+}
+
+.carGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.carCard {
+    background: #334155;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.12);
+}
+
+.carCard:hover {
+    transform: translateY(-8px);
+    background: #3b4b61;
+}
+
+.carCard img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.carCard h3 {
+    padding: 20px;
+    font-size: 22px;
+    color: white;
+}
+
+.carPrice {
+    padding: 0 20px;
+    color: #7dd3fc;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cardButton {
+    margin: 20px;
+    width: calc(100% - 40px);
+    padding: 14px;
+    border: none;
+    background: #38bdf8;
+    color: #0f172a;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+    text-decoration: none;
+
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.cardButton:hover {
+    background: #0ea5e9;
+    color: white;
+}
+
+.promoSection {
+    padding: 80px 0;
+    background: #dbeafe;
+}
+
+.promoSection h2,
+.aboutSection h2,
+.infoSection h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 34px;
+}
+
+.promoGrid,
+.infoGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.promoCard,
+.infoCard {
+    background: #334155;
+    color: white;
+    padding: 35px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.promoCard h3,
+.infoCard h3 {
+    color: #38bdf8;
+    margin-bottom: 15px;
+}
+
+.aboutSection {
+    padding: 80px 0;
+    background: #edf4fc;
+    text-align: center;
+}
+
+.aboutSection p {
+    max-width: 900px;
+    margin: 20px auto;
+    font-size: 18px;
+    color: #475569;
+}
+
+.infoSection {
+    padding: 80px 0;
+    background: #e8f1fb;
+}
+
+.catalogHero {
+    padding: 80px 0;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #1e3a5f,
+        #dbeafe
+    );
+    color: white;
+}
+
+.catalogHero h1 {
+    font-size: 46px;
+    margin-bottom: 20px;
+}
+
+.catalogHero p {
+    font-size: 20px;
+    color: #dbeafe;
+}
+
+/* ===== Filters ===== */
+
+.filterSection {
+    padding: 40px 0;
+    background: #edf4fc;
+}
+
+.filterWrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.searchInput,
+.filterSelect {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    font-size: 16px;
+    outline: none;
+    color: #1e293b;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.searchInput {
+    flex: 1;
+    min-width: 250px;
+}
+
+.filterSelect {
+    min-width: 220px;
+    cursor: pointer;
+}
+
+/* ===== Catalog Page ===== */
+
+.catalogPageSection {
+    padding: 80px 0;
+    background: #e8f1fb;
+}
+
+.carContent {
+    padding: 20px;
+}
+
+.carDescription {
+    color: #cbd5e1;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.emptyFavorites {
+    grid-column: 1 / -1;
+
+    min-height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+}
+
+.emptyFavorites h2 {
+    font-size: 34px;
+    margin-bottom: 15px;
+    color: #334155;
+}
+
+.emptyFavorites p {
+    font-size: 18px;
+    color: #64748b;
+}
+
+.addedButton {
+    background: #22c55e;
+    color: white;
+}
+
+.addedButton:hover {
+    background: #16a34a;
+}
+
+/* ===== Contacts ===== */
+
+.contactsSection {
+    padding: 80px 0;
+    background: #e8f1fb;
+}
+
+.contactsWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contactsInfo,
+.contactForm {
+    background: #334155;
+    padding: 40px;
+    border-radius: 16px;
+    color: white;
+}
+
+.contactsInfo h2,
+.contactForm h2 {
+    margin-bottom: 25px;
+    color: #38bdf8;
+}
+
+.contactsInfo p {
+    margin-bottom: 15px;
+    color: #cbd5e1;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contactForm input,
+.contactForm select {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+}
+
+/* ===== Form ===== */
+
+.contactForm textarea {
+    min-height: 120px;
+    resize: none;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+/* ===== Applications ===== */
+
+.applicationList {
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    margin-top: 40px;
+}
+
+.applicationCard {
+    width: 100%;
+
+    background: #334155;
+    color: white;
+
+    padding: 35px;
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.applicationCard h3 {
+    margin-bottom: 20px;
+    color: #38bdf8;
+}
+
+.applicationCard p {
+    margin-bottom: 10px;
+    color: #cbd5e1;
+}
+
+.applicationHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.deleteApplicationButton {
+    padding: 10px 18px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #ef4444;
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.deleteApplicationButton:hover {
+    background: #dc2626;
+}
+
+.siteFooter {
+    background: #1e293b;
+    color: white;
+    padding-top: 60px;
+    margin-top: 80px;
+}
+
+.footerContent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+    gap: 40px;
+    text-align: center;
+}
+
+.footerBlock {
+    width: 100%;
+}
+
+.footerBlock h3 {
+    margin-bottom: 20px;
+    color: #38bdf8;
+}
+
+.footerBlock p {
+    color: #cbd5e1;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.footerBottom {
+    margin-top: 50px;
+    padding: 25px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: #94a3b8;
+}
+
+.aboutImage {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+@media (max-width: 1024px) {
+
+    .carGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footerContent {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .contactsWrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .filterWrapper {
+        flex-direction: column;
+    }
+
+    .searchInput,
+    .filterSelect {
+        width: 100%;
+    }
+
+    .siteHeader .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .heroSection h1 {
+        font-size: 32px;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .heroSection {
+        min-height: 350px;
+        text-align: center;
+        padding: 30px 0;
+    }
+
+    .heroText h1 {
+        font-size: 30px;
+    }
+
+    .heroText p {
+        font-size: 16px;
+    }
+
+    .footerContent {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .aboutSection {
+    min-height: 220px;
+    padding: 25px;
+    }
+
+    .aboutSection h2 {
+        font-size: 32px;
+    }
+
+    .mainNav {
+        gap: 15px;
+    }
+
+    .filterBar {
+        flex-direction: column;
+    }
+
+    .filterBar input,
+    .filterBar select,
+    .filterBar button {
+        width: 100%;
+    }
+
+    .statsGrid, .infoGrid{
+        grid-template-columns: 1fr;
+    }
+
+    .carGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+    .mainButton {
+    width: fit-content;
+    min-width: 180px;
+    margin: 0 auto;
+    display: block;
+}
+
+    .cardButton{
+        margin: 10 auto;
+    }
+
+    .specialGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .siteHeader .container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .mainNav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .mainNav a {
+        font-size: 14px;
+    }
+
+    .heroSection {
+        min-height: 420px;
+    }
+
+    .heroText h1 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .heroText p {
+        font-size: 15px;
+    }
+
+    .sectionTitle {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .carGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .carCard img {
+        height: 200px;
+    }
+
+    .carContent {
+        padding: 18px;
+    }
+
+    .mainButton {
+    width: fit-content;
+    min-width: 180px;
+    margin: 0 auto;
+    display: block;
+}
+
+    .cardButton{
+        margin: 10 auto;
+    }
+
+    .statsGrid,
+    .infoGrid,
+    .footerContent,
+    .specialGrid,
+    .promoGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .aboutSection {
+    min-height: 220px;
+    padding: 25px;
+    }
+
+    .aboutSection h2 {
+        font-size: 26px;
+    }
+
+    .aboutSection p {
+        font-size: 14px;
+    }
+
+}
