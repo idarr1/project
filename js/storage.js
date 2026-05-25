@@ -1,6 +1,13 @@
-const storageKey = "autosalonData";
+// ======================================================
+// LOCAL STORAGE
+// ======================================================
 
-/* ===== Cars ===== */
+const storageKey =
+    "autosalonData";
+
+// ======================================================
+// МАССИВ АВТОМОБИЛЕЙ
+// ======================================================
 
 const cars = [
     {
@@ -9,7 +16,8 @@ const cars = [
         model: "Vesta",
         price: 1650000,
         image: "images/cars/lada-vesta.jpg",
-        description: "Современный российский седан."
+        description:
+            "Современный российский седан."
     },
 
     {
@@ -18,7 +26,8 @@ const cars = [
         model: "X5",
         price: 7500000,
         image: "images/cars/bmw-x5.webp",
-        description: "Премиальный немецкий кроссовер."
+        description:
+            "Премиальный немецкий кроссовер."
     },
 
     {
@@ -27,7 +36,8 @@ const cars = [
         model: "C-Class",
         price: 6200000,
         image: "images/cars/mercedesC.jpg",
-        description: "Комфортный бизнес-седан."
+        description:
+            "Комфортный бизнес-седан."
     },
 
     {
@@ -36,7 +46,8 @@ const cars = [
         model: "Camry",
         price: 2800000,
         image: "images/cars/camry.webp",
-        description: "Надёжный городской автомобиль."
+        description:
+            "Надёжный городской автомобиль."
     },
 
     {
@@ -45,7 +56,8 @@ const cars = [
         model: "Granta",
         price: 1250000,
         image: "images/cars/lada-granta.jpg",
-        description: "Практичный городской автомобиль."
+        description:
+            "Практичный городской автомобиль."
     },
 
     {
@@ -54,7 +66,8 @@ const cars = [
         model: "E-Class",
         price: 2600000,
         image: "images/cars/mercedesE.webp",
-        description: "Элегантный премиальный седан."
+        description:
+            "Элегантный премиальный седан."
     },
 
     {
@@ -63,7 +76,8 @@ const cars = [
         model: "5 Series",
         price: 5500000,
         image: "images/cars/bmw5.jpg",
-        description: "Спортивный бизнес-седан."
+        description:
+            "Спортивный бизнес-седан."
     },
 
     {
@@ -72,7 +86,8 @@ const cars = [
         model: "RAV4",
         price: 4600000,
         image: "images/cars/rav4.webp",
-        description: "Семейный современный кроссовер."
+        description:
+            "Семейный современный кроссовер."
     },
 
     {
@@ -81,7 +96,8 @@ const cars = [
         model: "Sonata",
         price: 2800000,
         image: "images/cars/sonata.jpg",
-        description: "Комфортный седан."
+        description:
+            "Комфортный седан."
     },
 
     {
@@ -90,7 +106,8 @@ const cars = [
         model: "Sportage",
         price: 4650000,
         image: "images/cars/kia.webp",
-        description: "Стильный городской кроссовер."
+        description:
+            "Стильный городской кроссовер."
     },
 
     {
@@ -99,7 +116,8 @@ const cars = [
         model: "A6",
         price: 6400000,
         image: "images/cars/audiA6.webp",
-        description: "Бизнес-седан с современными технологиями."
+        description:
+            "Бизнес-седан с современными технологиями."
     },
 
     {
@@ -108,34 +126,51 @@ const cars = [
         model: "Niva",
         price: 1650000,
         image: "images/cars/lada-niva.webp",
-        description: "Легендарный внедорожник."
+        description:
+            "Легендарный внедорожник."
     }
+
 ];
 
-/* ===== Storage ===== */
+// ======================================================
+// ПОЛУЧЕНИЕ ДАННЫХ ИЗ LOCAL STORAGE
+// ======================================================
 
+// Функция получает все данные сайта
+// из localStorage.
 function getStorageData() {
-
+    // Получаем данные по ключу.
     const storageData =
-        localStorage.getItem(storageKey);
+        localStorage.getItem(
+            storageKey
+        );
 
+    // Если данные существуют.
     if (storageData) {
-
-        return JSON.parse(storageData);
-
+        // Преобразуем JSON-строку
+        // обратно в объект.
+        return JSON.parse(
+            storageData
+        );
     }
 
+    // Если данных нет —
+    // создаем объект по умолчанию.
     return {
-
         favorites: [],
         application: null
-
     };
 
 }
 
-function saveStorageData(data) {
+// ======================================================
+// СОХРАНЕНИЕ ДАННЫХ В LOCAL STORAGE
+// ======================================================
 
+// Функция сохраняет объект
+// в localStorage.
+function saveStorageData(data) {
+    // JSON.stringify() превращает объект в строку.
     localStorage.setItem(
         storageKey,
         JSON.stringify(data)
@@ -143,57 +178,85 @@ function saveStorageData(data) {
 
 }
 
-/* ===== Favorites ===== */
+// ======================================================
+// ИЗБРАННЫЕ АВТОМОБИЛИ
+// ======================================================
 
+// Получаем избранное.
 function getFavorites() {
 
+    // Получаем все данные сайта.
     const data =
         getStorageData();
 
+    // Возвращаем только favorites.
     return data.favorites;
 
 }
 
+// Сохраняем избранное.
 function saveFavorites(favorites) {
 
+    // Получаем объект данных.
     const data =
         getStorageData();
 
-    data.favorites = favorites;
+    // Перезаписываем favorites.
+    data.favorites =
+        favorites;
 
-    saveStorageData(data);
+    // Сохраняем обновленный объект.
+    saveStorageData(
+        data
+    );
 
 }
 
-/* ===== Application ===== */
+// ======================================================
+// ЗАЯВКИ
+// ======================================================
 
+// Получаем заявку.
 function getApplication() {
-
+    // Получаем объект данных.
     const data =
         getStorageData();
 
+    // Возвращаем заявку.
     return data.application;
-
 }
 
+// Сохраняем заявку.
 function saveApplication(application) {
 
+    // Получаем данные сайта.
     const data =
         getStorageData();
 
-    data.application = application;
+    // Обновляем заявку.
+    data.application =
+        application;
 
-    saveStorageData(data);
+    // Сохраняем изменения.
+    saveStorageData(
+        data
+    );
 
 }
 
+// Удаляем заявку.
 function removeApplication() {
 
+    // Получаем данные сайта.
     const data =
         getStorageData();
 
+    // Очищаем заявку.
     data.application = null;
 
-    saveStorageData(data);
+    // Сохраняем изменения.
+    saveStorageData(
+        data
+    );
 
 }

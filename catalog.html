@@ -2,154 +2,196 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
-
-    <title>Каталог автомобилей</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>
+        Каталог
+    </title>
+    <link
+        rel="stylesheet"
+        href="css/fonts.css"
+    >
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
 </head>
 <body>
-
-<header class="siteHeader">
-    <div class="container">
-
-        <a
-    href="index.html"
-    class="logo"
->
-    Автосалон
-</a>
-
-        <nav class="mainNav">
-            <a href="index.html">Главная</a>
-            <a href="catalog.html" class="active">Каталог</a>
-            <a href="favorites.html">Избранное</a>
-            <a href="contacts.html">Контакты</a>
-        </nav>
-
-    </div>
-</header>
-
-<main>
-
-<section class="catalogHero">
-    <div class="container">
-
-        <h1>Каталог автомобилей</h1>
-
-        <p>
-            Российские и зарубежные автомобили
-            по выгодным ценам
-        </p>
-
-    </div>
-</section>
-
-<section class="filterSection">
-    <div class="container">
-
-        <div class="filterWrapper">
-
-            <input
-    type="text"
-    class="searchInput"
-    id="searchInput"
-    placeholder="Поиск автомобиля">
-
-            <select
-    class="filterSelect"
-    id="brandSelect">
-    <option>Все марки</option>
-    <option>LADA</option>
-    <option>BMW</option>
-    <option>Mercedes</option>
-    <option>Toyota</option>
-    <option>Другие</option>
-</select>
-
-            <select
-    class="filterSelect"
-    id="sortSelect">
-    <option value="default">
-        Сортировка
-    </option>
-
-    <option value="cheap">
-        Сначала дешевле
-    </option>
-
-    <option value="expensive">
-        Сначала дороже
-    </option>
-
-    <option value="name">
-        По названию
-    </option>
-</select>
-
-        </div>
-
-    </div>
-</section>
-
-<section class="catalogPageSection">
-    <div class="container">
-
-        <div class="carGrid" id="carGrid"></div>
-
-    </div>
-</section>
-
-</main>
-
-<footer class="siteFooter">
-    <div class="container">
-        <div class="footerContent">
-            <div class="footerBlock">
-                <h3>
-                    Автосалон
-                </h3>
-                <p>
-                    Современный каталог автомобилей
-                    с удобным поиском и избранным.
-                </p>
-            </div>
-            <div class="footerBlock">
-                <h3>
+    <!-- ================= HEADER ================= -->
+    <header class="siteHeader">
+        <div class="container">
+            <a
+                href="index.html"
+                class="logo"
+            >
+                Автосалон
+            </a>
+            <nav class="mainNav">
+                <a href="index.html">
+                    Главная
+                </a>
+                <a
+                    href="catalog.html"
+                    class="active"
+                >
+                    Каталог
+                </a>
+                <a href="favorites.html">
+                    Избранное
+                </a>
+                <a href="contacts.html">
                     Контакты
-                </h3>
-                <p>
-                    +7 (999) 123-45-67
-                </p>
-                <p>
-                    autosalon@mail.ru
-                </p>
-            </div>
-            <div class="footerBlock">
-                <h3>
-                    Адрес
-                </h3>
-                <p>
-                    г. Москва
-                </p>
-                <p>
-                    ул. Автомобильная, 15
-                </p>
-            </div>
+                </a>
+            </nav>
         </div>
-        <div class="footerBottom">
-            <p>
-                © 2026 Автосалон
-            </p>
-        </div>
-    </div>
-</footer>
+    </header>
 
-<script src="js/storage.js"></script>
-<script src="js/catalog.js"></script>
-<script src="js/filters.js"></script>
-<script src="js/favorites.js"></script>
+    <!-- ================= MAIN ================= -->
+    <main>
+        <section class="catalogHero">
+            <div class="container">
+                <h1>
+                    Каталог автомобилей
+                </h1>
+                <p>
+                    Российские и зарубежные
+                    автомобили
+                    по выгодным ценам
+                </p>
+            </div>
+        </section>
+
+        <!-- Секция фильтрации -->
+        <section class="filterSection">
+            <div class="container">
+                <div class="filterWrapper">
+                    <!-- Поиск автомобиля -->
+                    <input
+                        type="text"
+                        class="searchInput"
+                        id="searchInput"
+                        placeholder="Поиск автомобиля"
+                    >
+                    <!-- Фильтр по марке -->
+                    <select
+                        class="filterSelect"
+                        id="brandSelect"
+                    >
+                        <option>
+                            Все марки
+                        </option>
+
+                        <option>
+                            LADA
+                        </option>
+
+                        <option>
+                            BMW
+                        </option>
+
+                        <option>
+                            Mercedes
+                        </option>
+
+                        <option>
+                            Toyota
+                        </option>
+
+                        <option>
+                            Другие
+                        </option>
+                    </select>
+                    <!-- Сортировка -->
+                    <select
+                        class="filterSelect"
+                        id="sortSelect"
+                    >
+                        <option value="default">
+                            Сортировка
+                        </option>
+
+                        <option value="cheap">
+                            Сначала дешевле
+                        </option>
+
+                        <option value="expensive">
+                            Сначала дороже
+                        </option>
+
+                        <option value="name">
+                            По названию
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Каталог автомобилей -->
+        <section class="catalogPageSection">
+            <div class="container">
+                <!-- Контейнер для карточек -->
+                <div
+                    class="carGrid"
+                    id="carGrid"
+                ></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="siteFooter">
+        <div class="container">
+            <div class="footerContent">
+                <div class="footerBlock">
+                    <h3>
+                        Автосалон
+                    </h3>
+                    <p>
+                        Современный каталог
+                        автомобилей
+                        с удобным поиском
+                        и избранным.
+                    </p>
+                </div>
+                <div class="footerBlock">
+                    <h3>
+                        Контакты
+                    </h3>
+                    <p>
+                        +7 (999) 123-45-67
+                    </p>
+                    <p>
+                        autosalon@mail.ru
+                    </p>
+                </div>
+                <div class="footerBlock">
+                    <h3>
+                        Адрес
+                    </h3>
+                    <p>
+                        г. Москва
+                    </p>
+                    <p>
+                        ул. Автомобильная, 15
+                    </p>
+                </div>
+            </div>
+            <div class="footerBottom">
+                <p>
+                    © 2026 Автосалон
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= SCRIPTS ================= -->
+
+    <script src="js/storage.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/favorites.js"></script>
 
 </body>
 </html>

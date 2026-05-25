@@ -2,191 +2,230 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
-
-    <title>Контакты</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>
+        Контакты
+    </title>
+    <link
+        rel="stylesheet"
+        href="css/fonts.css"
+    >
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
 </head>
+
 <body>
-
-<header class="siteHeader">
-    <div class="container">
-
-        <a
-    href="index.html"
-    class="logo"
->
-    Автосалон
-</a>
-
-        <nav class="mainNav">
-            <a href="index.html">Главная</a>
-            <a href="catalog.html">Каталог</a>
-            <a href="favorites.html">Избранное</a>
-            <a href="contacts.html" class="active">Контакты</a>
-        </nav>
-
-    </div>
-</header>
-
-<main>
-
-<section class="catalogHero">
-    <div class="container">
-
-        <h1>Контакты</h1>
-
-        <p>
-            Свяжитесь с нами для консультации
-        </p>
-
-    </div>
-</section>
-
-<section class="contactsSection">
-    <div class="container">
-
-        <div class="contactsWrapper">
-
-            <div class="contactsInfo">
-
-                <h2>Контактная информация</h2>
-
-                <p>
-                    Адрес: г. Москва, ул. Автомобильная, 15
-                </p>
-
-                <p>
-                    Телефон: +7 (999) 123-45-67
-                </p>
-
-                <p>
-                    Email: autosalon@mail.ru
-                </p>
-
-                <p>
-                    Время работы: 09:00 – 21:00
-                </p>
-
-            </div>
-
-            <form
-    class="contactForm"
-    id="contactForm"
->
-
-    <h2>Оставить заявку</h2>
-
-    <input
-        type="text"
-        placeholder="Имя"
-        id="nameInput"
-    >
-
-    <input
-        type="text"
-        placeholder="Фамилия"
-        id="lastNameInput"
-    >
-
-    <input
-        type="text"
-        placeholder="+7 (___) ___-__-__"
-        id="phoneInput"
-    >
-
-    <input
-        type="email"
-        placeholder="Email"
-        id="emailInput"
-    >
-
-    <select id="carSelect">
-
-        <option>
-            Выберите автомобиль
-        </option>
-
-        <option>LADA</option>
-        <option>BMW</option>
-        <option>Mercedes</option>
-        <option>Toyota</option>
-
-    </select>
-
-    <textarea
-        placeholder="Комментарий"
-        id="commentInput"
-    ></textarea>
-
-    <button
-        type="submit"
-        class="mainButton"
-    >
-        Отправить
-    </button>
-
-</form>
-
-<div
-    class="applicationList"
-    id="applicationList"
-></div>
-
-        </div>
-
-    </div>
-</section>
-
-</main>
-
-<footer class="siteFooter">
-    <div class="container">
-        <div class="footerContent">
-            <div class="footerBlock">
-                <h3>
-                    Автосалон
-                </h3>
-                <p>
-                    Современный каталог автомобилей
-                    с удобным поиском и избранным.
-                </p>
-            </div>
-            <div class="footerBlock">
-                <h3>
+    <!-- ================= HEADER ================= -->
+    <header class="siteHeader">
+        <div class="container">
+            <a
+                href="index.html"
+                class="logo"
+            >
+                Автосалон
+            </a>
+            <nav class="mainNav">
+                <a href="index.html">
+                    Главная
+                </a>
+                <a href="catalog.html">
+                    Каталог
+                </a>
+                <a href="favorites.html">
+                    Избранное
+                </a>
+                <a
+                    href="contacts.html"
+                    class="active"
+                >
                     Контакты
-                </h3>
-                <p>
-                    +7 (999) 123-45-67
-                </p>
-                <p>
-                    autosalon@mail.ru
-                </p>
-            </div>
-            <div class="footerBlock">
-                <h3>
-                    Адрес
-                </h3>
-                <p>
-                    г. Москва
-                </p>
-                <p>
-                    ул. Автомобильная, 15
-                </p>
-            </div>
+                </a>
+            </nav>
         </div>
-        <div class="footerBottom">
-            <p>
-                © 2026 Автосалон
-            </p>
-        </div>
-    </div>
-</footer>
+    </header>
 
-<script src="js/storage.js"></script>
-<script src="js/form.js"></script>
+    <!-- ================= MAIN ================= -->
+    <main>
+        <!-- Главный блок страницы -->
+        <section class="catalogHero">
+            <div class="container">
+                <h1>
+                    Контакты
+                </h1>
+                <p>
+                    Свяжитесь с нами
+                    для консультации
+                </p>
+            </div>
+        </section>
+        <!-- Секция контактов -->
+        <section class="contactsSection">
+            <div class="container">
+                <div class="contactsWrapper">
+                    <!-- Контактная информация -->
+                    <div class="contactsInfo">
+                        <h2>
+                            Контактная информация
+                        </h2>
+                        <p>
+                            Адрес:
+                            г. Москва,
+                            ул. Автомобильная, 15
+                        </p>
+                        <p>
+                            Телефон:
+                            +7 (999) 123-45-67
+                        </p>
+                        <p>
+                            Email:
+                            autosalon@mail.ru
+                        </p>
+                        <p>
+                            Время работы:
+                            09:00 – 21:00
+                        </p>
+                    </div>
+                    <!-- Форма заявки -->
+                    <form
+                        class="contactForm"
+                        id="contactForm"
+                    >
+                        <h2>
+                            Оставить заявку
+                        </h2>
+                        
+                        <!-- Поле имени -->
+                        <input
+                            type="text"
+                            placeholder="Имя"
+                            id="nameInput"
+                        >
+
+                        <!-- Поле фамилии -->
+                        <input
+                            type="text"
+                            placeholder="Фамилия"
+                            id="lastNameInput"
+                        >
+
+                        <!-- Поле телефона -->
+                        <input
+                            type="text"
+                            placeholder="+7 (___) ___-__-__"
+                            id="phoneInput"
+                        >
+
+                        <!-- Поле email -->
+                        <input
+                            type="email"
+                            placeholder="Email"
+                            id="emailInput"
+                        >
+
+                        <!-- Выбор автомобиля -->
+                        <select id="carSelect">
+
+                            <option>
+                                Выберите автомобиль
+                            </option>
+
+                            <option>
+                                LADA
+                            </option>
+
+                            <option>
+                                BMW
+                            </option>
+
+                            <option>
+                                Mercedes
+                            </option>
+
+                            <option>
+                                Toyota
+                            </option>
+
+                        </select>
+
+                        <!-- Комментарий -->
+                        <textarea
+                            placeholder="Комментарий"
+                            id="commentInput"
+                        ></textarea>
+
+                        <!-- Кнопка отправки -->
+                        <button
+                            type="submit"
+                            class="mainButton"
+                        >
+                            Отправить
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Контейнер заявок -->
+                <div
+                    class="applicationList"
+                    id="applicationList"
+                ></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="siteFooter">
+        <div class="container">
+            <div class="footerContent">
+                <div class="footerBlock">
+                    <h3>
+                        Автосалон
+                    </h3>
+                    <p>
+                        Современный каталог
+                        автомобилей
+                        с удобным поиском
+                        и избранным.
+                    </p>
+                </div>
+                <div class="footerBlock">
+                    <h3>
+                        Контакты
+                    </h3>
+                    <p>
+                        +7 (999) 123-45-67
+                    </p>
+                    <p>
+                        autosalon@mail.ru
+                    </p>
+                </div>
+                <div class="footerBlock">
+                    <h3>
+                        Адрес
+                    </h3>
+                    <p>
+                        г. Москва
+                    </p>
+                    <p>
+                        ул. Автомобильная, 15
+                    </p>
+                </div>
+            </div>
+            <div class="footerBottom">
+                <p>
+                    © 2026 Автосалон
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script src="js/storage.js"></script>
+    <script src="js/form.js"></script>
 
 </body>
 </html>

@@ -1,161 +1,189 @@
-let favorites = getFavorites();
+// Получаем массив избранных автомобилей из localStorage.
+let favorites =
+    getFavorites();
 
-/* ===== Добавление в избранное ===== */
+// ======================================================
+// ДОБАВЛЕНИЕ В ИЗБРАННОЕ
+// ======================================================
 
+// Отслеживаем клики по странице.
 document.addEventListener(
     "click",
     function(event) {
-
+        // Проверяем: нажата ли кнопка избранного.
         if (
-            event.target.classList.contains(
+            !event.target.classList.contains(
                 "favoriteButton"
             )
         ) {
-
-            const carId =
-                Number(
-                    event.target.dataset.id
-                );
-
-            const selectedCar =
-                cars.find(function(car) {
-
-                    return car.id === carId;
-
-                });
-
-            const alreadyAdded =
-                favorites.some(function(car) {
-
-                    return car.id === carId;
-
-                });
-
-            if (!alreadyAdded) {
-
-    favorites.push(selectedCar);
-
-    saveFavorites(favorites);
-
-    event.target.textContent =
-        "Добавлено";
-
-    event.target.classList.add(
-        "addedButton"
-    );
-
-}
-
+            return;
         }
 
+        // Получаем id автомобиля.
+        const carId =
+            Number(
+                event.target.dataset.id
+            );
+
+        // Ищем автомобиль в массиве cars.
+        const selectedCar =
+            cars.find(function(car) {
+
+                return car.id === carId;
+
+            });
+
+        // Проверяем: есть ли автомобиль в избранном.
+        const alreadyAdded =
+            favorites.some(function(car) {
+
+                return car.id === carId;
+
+            });
+
+        // Если автомобиля нет — добавляем.
+        if (!alreadyAdded) {
+
+            // Добавляем автомобиль в массив favorites.
+            favorites.push(
+                selectedCar
+            );
+
+            // Сохраняем изменения.
+            saveFavorites(
+                favorites
+            );
+
+            // Меняем текст кнопки.
+            event.target.textContent =
+                "Добавлено";
+
+            // Добавляем зеленый стиль.
+            event.target.classList.add(
+                "addedButton"
+            );
+        }
     }
 );
 
-/* ===== Страница избранного ===== */
+// ======================================================
+// GRID ИЗБРАННОГО
+// ======================================================
 
+// Контейнер карточек избранного.
 const favoritesGrid =
     document.getElementById(
         "favoritesGrid"
     );
 
 function renderFavorites() {
-
     if (!favoritesGrid) {
-
         return;
-
     }
 
+    // Очищаем контейнер.
     favoritesGrid.innerHTML = "";
 
+    // Если избранного нет — выводим сообщение.
     if (favorites.length === 0) {
-
         favoritesGrid.innerHTML = `
             <div class="emptyFavorites">
                 <h2>
                     Пока нет избранных автомобилей
                 </h2>
-
                 <p>
                     Добавьте автомобили из каталога
                 </p>
             </div>
         `;
-
         return;
-
     }
 
+    // Перебираем массив избранного.
     favorites.forEach(function(car) {
 
+        // Создаем элемент article.
         const carCard =
-            document.createElement("article");
+            document.createElement(
+                "article"
+            );
 
-        carCard.classList.add("carCard");
+        // Добавляем CSS-класс.
+        carCard.classList.add(
+            "carCard"
+        );
 
+        // Вставляем HTML карточки.
         carCard.innerHTML = `
             <img
                 src="${car.image}"
                 alt="${car.brand} ${car.model}"
             >
-
             <div class="carContent">
-
                 <h3>
-                    ${car.brand} ${car.model}
+                    ${car.brand}
+                    ${car.model}
                 </h3>
-
                 <p class="carDescription">
                     ${car.description}
                 </p>
-
                 <p class="carPrice">
                     ${car.price.toLocaleString()} ₽
                 </p>
-
                 <button
-                    class="cardButton removeButton"
+                    class="
+                        cardButton
+                        removeButton
+                    "
                     data-id="${car.id}"
                 >
                     Удалить
                 </button>
-
             </div>
         `;
 
-        favoritesGrid.appendChild(carCard);
-
+        // Добавляем карточку в grid.
+        favoritesGrid.appendChild(
+            carCard
+        );
     });
-
 }
+
+// ======================================================
+// УДАЛЕНИЕ ИЗ ИЗБРАННОГО
+// ======================================================
 
 document.addEventListener(
     "click",
     function(event) {
-
+        // Проверяем: нажата ли кнопка удаления.
         if (
-            event.target.classList.contains(
+            !event.target.classList.contains(
                 "removeButton"
             )
         ) {
-
-            const carId =
-                Number(
-                    event.target.dataset.id
-                );
-
-            favorites = favorites.filter(function(car) {
-
-                return car.id !== carId;
-
-            });
-
-            saveFavorites(favorites);
-
-            renderFavorites();
-
+            return;
         }
 
+        // Получаем id автомобиля.
+        const carId =
+            Number(
+                event.target.dataset.id
+            );
+
+        // Удаляем автомобиль из массива.
+        favorites =
+            favorites.filter(function(car) {
+                return car.id !== carId;
+            });
+
+        // Сохраняем изменения.
+        saveFavorites(
+            favorites
+        );
+
+        // Перерисовываем избранное.
+        renderFavorites();
     }
 );
 
