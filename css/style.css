@@ -95,6 +95,83 @@ h3,
     display: inline-block;
 }
 
+/* ======================================================
+   ABOUT SECTION
+====================================================== */
+
+.aboutSection {
+    padding: 100px 0;
+    background: #edf4fc;
+}
+
+.aboutWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* ======================================================
+   IMAGE
+====================================================== */
+
+.aboutImage {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* ======================================================
+   CONTENT
+====================================================== */
+
+.aboutContent h2 {
+    font-size: 42px;
+    margin-bottom: 25px;
+    color: #0f172a;
+}
+
+.aboutContent p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #475569;
+}
+
+/* ======================================================
+   ADVANTAGES
+====================================================== */
+
+.aboutAdvantages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.aboutCard {
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.aboutCard:hover {
+    transform: translateY(-6px);
+}
+
+.aboutCard h3 {
+    font-size: 30px;
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
 /* =========================
    NAVIGATION
 ========================= */
@@ -298,22 +375,19 @@ h3,
 }
 
 .promoSection h2,
-.aboutSection h2,
-.infoSection h2 {
+.aboutSection h2 {
     text-align: center;
     margin-bottom: 40px;
     font-size: 34px;
 }
 
-.promoGrid,
-.infoGrid {
+.promoGrid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
-.promoCard,
-.infoCard {
+.promoCard{
     background: #334155;
     color: white;
 
@@ -323,8 +397,7 @@ h3,
     text-align: center;
 }
 
-.promoCard h3,
-.infoCard h3 {
+.promoCard h3{
     color: #38bdf8;
     margin-bottom: 15px;
 }
@@ -354,15 +427,6 @@ h3,
 
     object-fit: cover;
     border-radius: 30px;
-}
-
-/* =========================
-   INFO SECTION
-========================= */
-
-.infoSection {
-    padding: 80px 0;
-    background: #e8f1fb;
 }
 
 /* =========================
@@ -712,6 +776,17 @@ h3,
         padding: 25px;
     }
 
+    .aboutWrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .aboutImage {
+        height: 350px;
+    }
+
+    .aboutAdvantages {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* =========================
